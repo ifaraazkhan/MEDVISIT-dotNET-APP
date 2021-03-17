@@ -22,51 +22,39 @@
 										
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Username <span class="text-danger">*</span></label>
-												<input type="text" class="form-control" readonly="" value="Username is not editable">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Email <span class="text-danger">*</span></label>
-												<input type="email" class="form-control" readonly="" value="xyz@gmail.com">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>First Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Last Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Phone Number</label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Gender</label>
-												<select class="form-control select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-													<option data-select2-id="3">Select</option>
-													<option>Male</option>
-													<option>Female</option>
-												</select>
+												<label>Email ID </label>
+                                                <asp:TextBox ID="txt_email" runat="server" class="form-control" readonly=""></asp:TextBox>
 												
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group mb-0">
-												<label>Date of Birth</label>
-												<input type="text" class="form-control">
+											<div class="form-group">
+												<label>Mobile Number </label>
+											    <asp:TextBox ID="txt_mobile" runat="server" class="form-control" readonly=""></asp:TextBox>
 											</div>
 										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Name </label>
+												 <asp:TextBox ID="txt_name" runat="server" class="form-control"></asp:TextBox>
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Practicing since</label>
+											 <asp:TextBox ID="txt_practice" runat="server" class="form-control"></asp:TextBox>
+											</div>
+										</div>
+									<div class="col-md-12">
+											<div class="form-group">
+												<label>Profile Description</label>
+												 <asp:TextBox ID="txt_description" runat="server" class="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
+											</div>
+										</div>
+                                       	<div class="add-more">
+										 <asp:Button ID="btn_update_profile" runat="server" Text="Update" class="btn btn-primary" />
+									</div>
 									</div>
 								</div>
 							</div>
@@ -80,30 +68,47 @@
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Degree</label>
-															<input type="text" class="form-control">
+														 <asp:TextBox ID="txt_degree" runat="server" class="form-control"></asp:TextBox>
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>College/Institute</label>
-															<input type="text" class="form-control">
+															 <asp:TextBox ID="txt_college" runat="server" class="form-control"></asp:TextBox>
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Year of Completion</label>
-															<input type="text" class="form-control">
+															 <asp:TextBox ID="txt_year" runat="server" class="form-control"></asp:TextBox>
 														</div> 
 													</div>
-												</div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+														<div class="form-group">
+															<label>Certificate Names</label>
+															 <asp:TextBox ID="txt_certificate" runat="server" class="form-control"></asp:TextBox>
+														</div> 
+													</div>
+                                                      <%-- <div class="col-12 col-md-6 col-lg-4">
+														<div class="form-group">
+															<label>Specialization</label>
+															 <asp:TextBox ID="txt_speciality" runat="server" class="form-control"></asp:TextBox>
+														</div> 
+													</div>--%>
+                                                     
+										</div>
+												
 											</div>
 										</div>
 									</div>
 									<div class="add-more">
-										<a href="javascript:void(0);" class="add-education"><i class="fa fa-plus-circle"></i> Add More</a>
+										 <asp:Button ID="Button2" runat="server" Text="Update" class="btn btn-primary" />
 									</div>
 								</div>
 							</div>
-						</div>
+						
+    
+    
+    </div>
 </asp:Content>
 

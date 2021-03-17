@@ -92,6 +92,39 @@ namespace MD_Clinic
 
         }
 
+        public DataSet Accessdb_return_dataset(string sqlcommand, string tablename)
+        {
+            try
+            {
+                con.Open();
+                DataSet ds = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlcommand, con);
+
+                adapter.Fill(ds, tablename);
+
+
+                con.Close();
+
+                return ds;
+                //dataset ds;
+                //ds = cls.accessdb_return_dataset("select * from doctors where id=" + doctor_id + "", "doctors");
+
+                //txt_email.text = ds.tables["doctors"].rows[0]["email"].tostring();
+                //txt_mobile.text = ds.tables["doctors"].rows[0]["phone"].tostring();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+            
+        }
+
         public string Acessdb_return_new(string sqlcommand)
         {
             try

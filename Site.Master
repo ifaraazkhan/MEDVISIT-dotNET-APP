@@ -1,0 +1,454 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MD_Clinic.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+   
+    <link href="assets/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <!-- Favicons -->
+	
+		
+		
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		
+		<link rel="stylesheet" href="assets/css/style.css">
+   
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+ 
+	
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <!-- Main Wrapper -->
+		<div class="main-wrapper">
+            <!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="doctor-dashboard.html" class="navbar-brand logo">
+							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="login.html" class="menu-logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact Support</p>
+								<p class="contact-info-header"> +1 234 567 89</p>
+							</div>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/medical_heart.png" width="31" alt="">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									
+									<div class="user-text">
+										<h6>
+                                            <asp:Label ID="lbl_clinicname" runat="server" Text="Label"></asp:Label></h6>
+										<p class="text-muted mb-0">Clinic</p>
+									</div>
+								</div>
+                                <asp:LinkButton ID="link_changedr" class="dropdown-item" runat="server" OnClick="link_changedr_Click">Change Doctor</asp:LinkButton>
+                                <asp:LinkButton ID="link_logout" class="dropdown-item" runat="server" OnClick="link_logout_Click">Logout</asp:LinkButton>
+							
+								
+							</div>
+						</li>
+						<!-- /User Menu -->
+						
+						
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+
+            <asp:ContentPlaceHolder ID="ContentPlace_breadcrumb" runat="server">
+                <!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							
+							<h2 class="breadcrumb-title">Dashboard</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+            </asp:ContentPlaceHolder>
+
+            <!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder_sidebar" runat="server">
+                            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+							
+							<!-- Profile Sidebar -->
+							<div class="profile-sidebar">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder_dr_profile" runat="server">
+								<div class="widget-profile pro-widget-content">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img" style="padding:0px">
+											<img src="assets/img/doctors/doctor_icon.png" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3>Dr. <asp:Label ID="lbl_doctor_name" runat="server" Text=""></asp:Label></h3>
+											
+											<div class="patient-details">
+												<h5 class="mb-0">
+                                                    <asp:Label ID="lbl_dr_degree" runat="server" Text=""></asp:Label></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+                                </asp:ContentPlaceHolder>
+
+								<div class="dashboard-widget">
+									<nav class="dashboard-menu">
+										<ul id="navigation_menu">
+											<li>
+												<a href="Dashboard.aspx">
+													<i class="fas fa-columns"></i>
+													<span>Dashboard</span>
+												</a>
+											</li>
+											<li>
+												<a href="appointments.aspx">
+													<i class="fas fa-calendar-check"></i>
+													<span>Today's Appointments</span>
+												</a>
+											</li>
+											
+											<li>
+												<a href="calendar.aspx">
+													<i class="fas fa-calendar"></i>
+													<span>Manage Calendar</span>
+												</a>
+											</li>
+											
+											<li>
+												<a href="Profile.aspx">
+													<i class="fas fa-columns"></i>
+													<span>Profile</span>
+												</a>
+											</li>
+										
+											<li>
+												<a href="Settings.aspx">
+													<i class="fas fa-user-cog"></i>
+													<span>Settings</span>
+												</a>
+											</li>
+											
+										</ul>
+                                   
+									</nav>
+								</div>
+                                
+							</div>
+							<!-- /Profile Sidebar -->
+							
+						</div>
+                        </asp:ContentPlaceHolder>
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder_mainArea" runat="server">
+
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+
+				</div>
+                <footer class="footer">
+				
+				
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="#">Semanticbits</a> &copy; <%: DateTime.Now.Year %></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="#">Contact support</a></li>
+											<li><a href="#">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			</div>		
+			<!-- /Page Content -->
+       </div>
+        
+			<!-- /Footer -->
+        
+     <!-- Change Doctor Modal -->
+		 <div class="modal fade custom-modal" id="change_Profile_modal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Change Doctor Profile</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+                             <asp:ListView ID="ListView_DoctorMapping" runat="server" ItemPlaceholderID="itemPlaceHolder1" OnItemUpdating="ListView_DoctorMapping_ItemUpdating">
+
+                               <LayoutTemplate>
+                                   	<div class="appointments">
+                                     <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
+                                    </div>
+                               </LayoutTemplate>
+
+					           <ItemTemplate>
+
+                                   <!-- Appointment List -->
+								<div class="appointment-list" style="padding:10px;margin:10px">
+									<div class="profile-info-widget">
+										<a href="patient-profile.html" class="booking-doc-img">
+											<img src="assets/img/doctors/doctor_icon.png" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3><a href="#">  <%# Eval("name")%> </a></h3>
+											<div class="patient-details">
+												
+												<h5><i class="fas fa-envelope"></i>   <%# Eval("email")%> </h5>
+												<h5 class="mb-0"><i class="fas fa-phone"></i>   <%# Eval("phone")%> </h5>
+                                                <p>
+                                                    <br />
+                                                   
+                                                     
+                                                    <asp:LinkButton ID="UpdateButton" class="btn btn-sm bg-success-light" ToolTip='make this active' OnClick="UpdateButton_Click" runat="server" CommandArgument='<%#Eval("doctor_id")%>' CommandName="Update">
+                                                         <i class="fas fa-check"></i>  SWITCH PROFILE
+                                                    </asp:LinkButton>
+                                                   
+                                                   <asp:Label ID="lbl_id" runat="server" Visible="false" Text='<%# Eval("doctor_id")%>'></asp:Label>
+                                                </p>
+                                                 	
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<!-- /Appointment List -->
+                               </ItemTemplate>
+			
+                            </asp:ListView>
+					</div>
+				</div>
+			</div>
+		</div>
+	   <!--/ Change Doctor Modal -->        
+          
+    </form>
+        <!-- Appointment Details Modal -->
+		<div class="modal fade custom-modal" id="appt_details">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Appointment Details</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ul class="info-details">
+							<li>
+								<div class="details-header">
+									<div class="row">
+										<div class="col-md-6">
+											<span class="title">John Doe</span>
+											<span class="text">21 Oct 2019 <br/><a href="#" class="text-info">10:00 AM - 10:30 AM</a></span>
+										</div>
+										<div class="col-md-6">
+											<div class="text-right">
+												<button type="button" class="btn bg-success-light btn-sm" id="topup_status">Available</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="title">For:</span>
+								<span class="text">Some reason filled at appointment </span>
+							</li>
+							
+							<li>
+								<span class="title">Contact Details</span>
+								<span class="text">
+									<a href="tel:8574151908" class="badge badge-warning" style="font-size: 20px;color:#fff;">
+										<i class="fa fa-phone"></i> - 8574151908</a> <br/>faraazmohdkhan@gmail.com</span>
+							</li>
+							<li>
+								<span class="title">Status:</span>
+								<span class="text">Pending Not Confirmed</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Appointment Details Modal -->
+
+		 <!-- Appointment Accept Modal -->
+		 <div class="modal fade custom-modal" id="appt_accepts">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Appointment Acceptance Notes</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ul class="info-details">
+							<li>
+								<div class="details-header">
+									<div class="row">
+										<div class="col-md-6">
+											<span class="title">John Doe</span>
+											<span class="text">21 Oct 2019 <br/><a href="#" class="text-info">10:00 AM - 10:30 AM</a></span>
+										</div>
+										<div class="col-md-6">
+											<div class="text-right">
+												<button type="button" class="btn bg-info-light submit-btn" id="topup_status">Reschedule</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<form>
+									<br>
+									<div class="form-group">
+										<label>Acceptance Note</label>
+										<textarea class = "form-control" rows = "3" placeholder = "Enter Notes "></textarea>
+									</div>
+									
+									<div class="submit-section">
+										<button type="submit" class="btn btn-primary submit-btn">Confirm Appointment</button>
+									</div>
+								</form>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Appointment Accept Modal -->
+
+
+
+
+
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Circle Progress JS -->
+		<script src="assets/js/circle-progress.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+
+       <script type="text/javascript">
+    function openModal() {
+       // $('#appt_details').modal('show');
+        alert("hi");
+           }
+</script>
+    <script>
+        $('#navigation_menu').find('[href = "'+((window.location.pathname).replace('/',''))+".aspx"+'"]').parent().addClass('active');
+    </script>
+</body>
+</html>

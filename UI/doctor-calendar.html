@@ -1,0 +1,684 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- doccure/doctor-dashboard.html  30 Nov 2019 04:12:03 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>MedVisit</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="doctor-dashboard.html" class="navbar-brand logo">
+							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="login.html" class="menu-logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +1 234 567 89</p>
+							</div>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Dr.John Doe</h6>
+										<p class="text-muted mb-0">Doctor</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
+								<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
+								<a class="dropdown-item" href="login.html">Logout</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Clinic Name</h6>
+										<p class="text-muted mb-0">Address</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="doctor-dashboard.html">Clinic 1</a>
+								<a class="dropdown-item" href="doctor-profile-settings.html">Clinic 2</a>
+								<a class="dropdown-item" href="login.html">Logout</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+						
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							
+							<h2 class="breadcrumb-title">
+								Calendar
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+							
+							<!-- Profile Sidebar -->
+							<div class="profile-sidebar">
+								<div class="widget-profile pro-widget-content">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img">
+											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3>Dr. John Doe</h3>
+											
+											<div class="patient-details">
+												<h5 class="mb-0">MBBS, MD </h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard-widget">
+									<nav class="dashboard-menu">
+										<ul>
+											<li >
+												<a href="doctor-dashboard.html">
+													<i class="fas fa-columns"></i>
+													<span>Dashboard</span>
+												</a>
+											</li>
+											<li>
+												<a href="appointments.html">
+													<i class="fas fa-calendar-check"></i>
+													<span>Today's Appointments</span>
+												</a>
+											</li>
+											
+											<li class="active">
+												<a href="doctor-calendar.html">
+													<i class="fas fa-calendar"></i>
+													<span>Manage Calendar</span>
+												</a>
+											</li>
+											
+											<li>
+												<a href="doctor-profile-settings.html">
+													<i class="fas fa-columns"></i>
+													<span>Profile</span>
+												</a>
+											</li>
+										
+											<li>
+												<a href="doctor-change-password.html">
+													<i class="fas fa-user-cog"></i>
+													<span>Settings</span>
+												</a>
+											</li>
+											<li>
+												<a href="login.html">
+													<i class="fas fa-sign-out-alt"></i>
+													<span>Logout</span>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<!-- /Profile Sidebar -->
+							
+						</div>
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+
+							
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-12 col-sm-4 col-md-6">
+											<h4 class="mb-1">11 November 2019</h4>
+											<p class="text-muted">Monday</p>
+										</div>
+										<div class="col-12 col-sm-8 col-md-6 text-sm-right">
+											<div class="bookingrange btn btn-white btn-sm mb-3">
+												<i class="far fa-calendar-alt mr-2"></i>
+												<span>February 17, 2021 - February 23, 2021</span>
+												<i class="fas fa-chevron-down ml-2"></i>
+											</div>
+										</div>
+									</div>
+									<div class="card booking-schedule schedule-widget">
+							
+										<!-- Schedule Header -->
+										<div class="schedule-header">
+											<div class="row">
+												<div class="col-md-12">
+												
+													<!-- Day Slot -->
+													<div class="day-slot">
+														<ul>
+															<li class="left-arrow">
+																<a href="">
+																	<i class="fa fa-chevron-left"></i>
+																</a>
+															</li>
+															<li>
+																<span>Mon</span>
+																<span class="slot-date">11 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-success-light" data-toggle="tooltip" data-placement="bottom" title="Change to Non-Working">Working</button>
+													
+																
+															</span>
+															</li>
+															<li>
+																<span>Tue</span>
+																<span class="slot-date">12 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li>
+																<span>Wed</span>
+																<span class="slot-date">13 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li>
+																<span>Thu</span>
+																<span class="slot-date">14 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li>
+																<span>Fri</span>
+																<span class="slot-date">15 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li>
+																<span>Sat</span>
+																<span class="slot-date">16 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li>
+																<span>Sun</span>
+																<span class="slot-date">17 Nov <small class="slot-year">2019</small></span>
+																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
+																title="Make this Working" >Non-Working</button>
+															</li>
+															<li class="right-arrow">
+																<a href="">
+																	<i class="fa fa-chevron-right"></i>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<!-- /Day Slot -->
+													
+												</div>
+											</div>
+										</div>
+										<!-- /Schedule Header -->
+										
+										<!-- Schedule Content -->
+										<div class="schedule-cont">
+											<div class="row">
+												<div class="col-md-12">
+												
+													<!-- Time Slot -->
+													<div class="time-slot">
+														<ul class="clearfix">
+															<li>
+																
+																<a class="timing bg-success-light" href="#">
+																	<span>10:00 - 10:30</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00 - 11:30</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:30 - 12:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>12:00 - 12:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>12:30 - 1:00</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>1:00 - 1:30</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>1:30 - 2:00</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>2:00 - 2:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>2:30 - 3:00</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>3:00 - 3:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>3:30 - 4:00</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>4:00 - 4:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>4:30 - 5:00</span> <span>PM</span>
+																</a>
+															</li>
+															<li>
+																<a class="timing" href="#">
+																	<span>9:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>10:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00</span> <span>AM</span>
+																</a>
+															</li>
+															<li>
+																<a class="timing" href="#">
+																	<span>9:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>10:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00</span> <span>AM</span>
+																</a>
+															</li>
+															<li>
+																
+																<a class="timing bg-success-light" href="#">
+																	<span>10:00 - 10:30</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00 - 11:30</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:30 - 12:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>12:00 - 12:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>12:30 - 1:00</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>1:00 - 1:30</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>1:30 - 2:00</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>2:00 - 2:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>2:30 - 3:00</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>3:00 - 3:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>3:30 - 4:00</span> <span>PM</span>
+																</a>
+																<a class="timing bg-danger-light" href="#">
+																	<span>4:00 - 4:30</span> <span>PM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>4:30 - 5:00</span> <span>PM</span>
+																</a>
+															</li>
+															<li>
+																<a class="timing" href="#">
+																	<span>9:00</span> <span>AM</span>
+																</a>
+																<a class="timing selected" href="#">
+																	<span>10:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00</span> <span>AM</span>
+																</a>
+															</li>
+															<li>
+																<a class="timing" href="#">
+																	<span>9:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>10:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00</span> <span>AM</span>
+																</a>
+															</li>
+															<li>
+																<a class="timing" href="#">
+																	<span>9:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>10:00</span> <span>AM</span>
+																</a>
+																<a class="timing" href="#">
+																	<span>11:00</span> <span>AM</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<!-- /Time Slot -->
+													<hr/>
+													<div class="row form-row">
+														
+														<div class="col-md-3">
+															<div class="form-group">
+																
+																<button type="submit" class="btn btn-primary">Save this as template</button>
+															</div>
+														</div>
+														<div class="col-md-1">
+															<div class="form-group">
+																
+																
+															</div>
+														</div>
+														<div class="col-md-2">
+															<div class="form-group">
+																<select class="form-control" tabindex="-1" aria-hidden="true" style="width:150px; margin-left:10px; min-height: 10px;font-size: 14px;">
+																	<option data-select2-id="3">Select</option>
+																	<option>Template-1</option>
+																	<option>Template-2</option>
+																	<option>Template-3</option>
+																</select>
+																
+															</div>
+														</div>
+														<div class="col-md-2">
+															<div class="form-group">
+																
+																<select class="form-control" tabindex="-1" aria-hidden="true" style="width:150px; margin-left:10px; min-height: 10px;font-size: 14px;">
+																	<option data-select2-id="3">Choose Duration</option>
+																	<option>For Current Week only</option>
+																	<option>For 2 weeks</option>
+																	<option>For 3 weeks </option>
+																	<option>For 4 weeks </option>
+																	<option>For 8 weeks </option>
+																</select>
+																
+															</div>
+														</div>
+														<div class="col-md-4">
+															<div class="appointment-action">
+																<a href="#" style="font-size: 18px;" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+																	<i class="fas fa-calendar-alt"></i> Apply & Publish Calendar
+																</a>
+																
+																<!-- <a href="javascript:void(0);" style="font-size: 18px;" class="btn btn-sm bg-warning-light">
+																	<i class="fas fa-check"></i> update
+																</a> -->
+																<!-- <a href="javascript:void(0);" style="font-size: 18px;" class="btn btn-sm bg-danger-light">
+																	<i class="fas fa-trash"></i> 
+																</a> -->
+															</div>
+														</div>
+												
+														
+														
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /Schedule Content -->
+										
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="#">Semanticbits</a></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="#">Contact support</a></li>
+											<li><a href="#">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  <!-- Appointment Details Modal -->
+		<div class="modal fade custom-modal" id="appt_details">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Appointment Details</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ul class="info-details">
+							<li>
+								<div class="details-header">
+									<div class="row">
+										<div class="col-md-6">
+											<span class="title">John Doe</span>
+											<span class="text">21 Oct 2019 <br/><a href="#" class="text-info">10:00 AM - 10:30 AM</a></span>
+										</div>
+										<div class="col-md-6">
+											<div class="text-right">
+												<button type="button" class="btn bg-success-light btn-sm" id="topup_status">Available</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="title">For:</span>
+								<span class="text">Some reason filled at appointment </span>
+							</li>
+							
+							<li>
+								<span class="title">Contact Details</span>
+								<span class="text">
+									<a href="tel:8574151908" class="badge badge-warning" style="font-size: 20px;color:#fff;">
+										<i class="fa fa-phone"></i> - 8574151908</a> <br/>faraazmohdkhan@gmail.com</span>
+							</li>
+							<li>
+								<span class="title">Status:</span>
+								<span class="text">Pending Not Confirmed</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Appointment Details Modal -->
+
+		 <!-- Appointment Accept Modal -->
+		 <div class="modal fade custom-modal" id="appt_accepts">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Appointment Acceptance Notes</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ul class="info-details">
+							<li>
+								<div class="details-header">
+									<div class="row">
+										<div class="col-md-6">
+											<span class="title">John Doe</span>
+											<span class="text">21 Oct 2019 <br/><a href="#" class="text-info">10:00 AM - 10:30 AM</a></span>
+										</div>
+										<div class="col-md-6">
+											<div class="text-right">
+												<button type="button" class="btn bg-info-light submit-btn" id="topup_status">Reschedule</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<form>
+									<br>
+									<div class="form-group">
+										<label>Acceptance Note</label>
+										<textarea class = "form-control" rows = "3" placeholder = "Enter Notes "></textarea>
+									</div>
+									
+									<div class="submit-section">
+										<button type="submit" class="btn btn-primary submit-btn">Confirm Appointment</button>
+									</div>
+								</form>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Appointment Accept Modal -->
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Circle Progress JS -->
+		<script src="assets/js/circle-progress.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+<!-- doccure/doctor-dashboard.html  30 Nov 2019 04:12:09 GMT -->
+</html>

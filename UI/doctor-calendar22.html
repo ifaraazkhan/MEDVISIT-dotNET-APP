@@ -1,0 +1,536 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- doccure/doctor-change-password.html  30 Nov 2019 04:12:36 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>MedVisit</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="doctor-dashboard.html" class="navbar-brand logo">
+							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="doctor-dashboard.html" class="menu-logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +1 234 567 89</p>
+							</div>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Dr.John Doe</h6>
+										<p class="text-muted mb-0">Doctor</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
+								<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
+								<a class="dropdown-item" href="login.html">Logout</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+						
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							
+							<h2 class="breadcrumb-title">Manage Calendar</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+						
+							<!-- Profile Sidebar -->
+						<div class="profile-sidebar">
+							<div class="widget-profile pro-widget-content">
+								<div class="profile-info-widget">
+									<a href="#" class="booking-doc-img">
+										<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+									</a>
+									<div class="profile-det-info">
+										<h3>Dr. John Doe</h3>
+										
+										<div class="patient-details">
+											<h5 class="mb-0">MBBS, MD </h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dashboard-widget">
+								<nav class="dashboard-menu">
+									<ul>
+										<li >
+											<a href="doctor-dashboard.html">
+												<i class="fas fa-columns"></i>
+												<span>Dashboard</span>
+											</a>
+										</li>
+										<li >
+											<a href="appointments.html">
+												<i class="fas fa-calendar-check"></i>
+												<span>Today's Appointments</span>
+											</a>
+										</li>
+										
+										<li class="active">
+											<a href="schedule-timings.html">
+												<i class="fas fa-calendar-check"></i>
+												<span>Manage Calendar</span>
+											</a>
+										</li>
+										
+										
+										<li>
+											<a href="doctor-profile-settings.html">
+												<i class="fas fa-user-cog"></i>
+												<span>Profile Settings</span>
+											</a>
+										</li>
+									
+										<li >
+											<a href="doctor-change-password.html">
+												<i class="fas fa-lock"></i>
+												<span>Change Password</span>
+											</a>
+										</li>
+										<li>
+											<a href="login.html">
+												<i class="fas fa-sign-out-alt"></i>
+												<span>Logout</span>
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<!-- /Profile Sidebar -->
+							
+						</div>
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Manage Availability Calendar</h4>
+									
+										<div class="row">
+											<div class="col-md-12">
+												<div class="card schedule-widget mb-0">
+												
+													<!-- Schedule Header -->
+													<div class="schedule-header">
+													
+														<!-- Schedule Nav -->
+														<div class="schedule-nav">
+															<ul class="nav nav-tabs nav-justified">
+																<li class="nav-item">
+																	<a class="nav-link active" data-toggle="tab" href="#slot_sunday">Active Template</a>
+																</li>
+																<li class="nav-item">
+																	<a class="nav-link " data-toggle="tab" href="#slot_monday">Add New Template</a>
+																</li>
+																<li class="nav-item">
+																	<a class="nav-link" data-toggle="tab" href="#slot_tuesday">Manage Template</a>
+																</li>
+																<li class="nav-item">
+																	<a class="nav-link" data-toggle="tab" href="#slot_wednesday">Mark unavailability</a>
+																</li>
+															
+																
+															</ul>
+														</div>
+														<!-- /Schedule Nav -->
+														
+													</div>
+													<!-- /Schedule Header -->
+													
+													<!-- Schedule Content -->
+													<div class="tab-content schedule-cont">
+													
+														<!-- Sunday Slot -->
+														<div id="slot_sunday" class="tab-pane fade show active">
+															<!-- Business Hours Widget -->
+								<div class="widget business-widget">
+									<div class="widget-content">
+										<div class="listing-hours">
+											<div class="listing-day current">
+												<div class="day">Today <span>5 Nov 2019</span></div>
+												<div class="time-items">
+													<span class="open-status"><span class="badge bg-success-light">Open Now</span></span>
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Monday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Tuesday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Wednesday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Thursday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Friday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day">
+												<div class="day">Saturday</div>
+												<div class="time-items">
+													<span class="time">07:00 AM - 09:00 PM</span>
+												</div>
+											</div>
+											<div class="listing-day closed">
+												<div class="day">Sunday</div>
+												<div class="time-items">
+													<span class="time"><span class="badge bg-danger-light">Closed</span></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Business Hours Widget -->
+														</div>
+														<!-- /Sunday Slot -->
+
+														<!-- Monday Slot -->
+														<div id="slot_monday" class="tab-pane fade ">
+															<div class="row form-row">
+																<div class="col-md-3">
+																	<div class="form-group">
+																		<label>Choose </label>
+																		<br><button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="fas fa-calendar-check"></span> Working Days</button>
+																		<ul class="dropdown-menu">
+																		  <li><a href="#" class="" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Monday</a></li>
+																		  <li><a href="#" class="" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Tuesday</a></li>
+																		  <li><a href="#" class="" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Wednesday</a></li>
+																		  <li><a href="#" class="" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Thursday</a></li>
+																		  <li><a href="#" class="" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Friday</a></li>
+																		  <li><a href="#" class="" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Saturday</a></li>
+																		  <li><a href="#" class="" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Sunday</a></li>
+																		</ul>
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<div class="form-group">
+																		<label class="control-label">Start Time</label>
+																		<input type="text" class="form-control">
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<div class="form-group">
+																		<label class="control-label">End Time</label>
+																		<input type="text" class="form-control">
+																	</div>
+																</div>
+																<div class="col-md-3">
+																	<div class="form-group">
+																		<label class="control-label">Slot Timimg</label>
+																		<select class="form-control select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+																			
+																			<option>15 mins</option>
+																			<option>30 mins</option>
+																			<option>45 mins</option>
+																			<option>1 hour</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<div class="form-group">
+																		<label class="control-label">Save to template</label>
+																			<button type="submit" class="btn btn-primary">Add</button>
+																		
+																	</div>
+																</div>
+
+																<div class="col-md-12">
+																	<hr>
+																</div>
+
+																<div class="col-md-12">
+																	<div class="submit-section">
+																		<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																	</div>
+																</div>
+						
+																
+															</div>
+															
+														</div>
+														<!-- /Monday Slot -->
+
+														<!-- Tuesday Slot -->
+														<div id="slot_tuesday" class="tab-pane fade">
+															<div class="table-responsive">
+																<table class="table table-hover table-center mb-0">
+																	<thead>
+																		<tr>
+																			<th>Template Name</th>
+																			<th>Work Days</th>
+																			<th>Timimgs</th>
+																			<th>Slot timings</th>
+																			<th></th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>
+																				<a href="#">Temp-1</a>
+																			</td>
+																			<td>
+																				
+																					
+																					<span class="badge bg-success-light">Monday</span><br/> 
+																					<span class="badge bg-success-light">Tuesday</span><br/> 
+																					<span class="badge bg-success-light">Wednesday</span><br/> 
+																					<span class="badge bg-success-light">Thursday</span><br/> 
+																					<span class="badge bg-success-light">Friday</span>
+																					
+																				
+																			</td>
+																			<td>
+																				<span class="badge bg-danger-light">9:30am - 1:00pm</span><br/>
+																				<span class="badge bg-danger-light">9:30am - 1:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span>
+																			</td>
+
+																			<td>30 minutes</td>
+																			<td class="text-right">
+																				<div class="table-action">
+																					<a href="" class="btn btn-sm bg-primary">
+																						<i class="far fa-check"></i> Make this Active
+																					</a>
+																					<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																						<i class="fas fa-sign-out-alt"></i> Delete it
+																					</a>
+																				</div>
+																			</td>
+																		</tr>
+
+																		<tr>
+																			<td>
+																				<a href="#">Temp-2</a>
+																			</td>
+																			<td>
+																				
+																					
+																					<span class="badge bg-success-light">Monday</span><br/> 
+																					<span class="badge bg-success-light">Tuesday</span><br/> 
+																					<span class="badge bg-success-light">Wednesday</span><br/> 
+																					<span class="badge bg-success-light">Thursday</span><br/> 
+																					<span class="badge bg-success-light">Friday</span>
+																					
+																				
+																			</td>
+																			<td>
+																				<span class="badge bg-danger-light">9:30am - 1:00pm</span><br/>
+																				<span class="badge bg-danger-light">9:30am - 1:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span><br/>
+																				<span class="badge bg-danger-light">1:30am - 5:00pm</span>
+																			</td>
+
+																			<td>1 hour</td>
+																			<td class="text-right">
+																				<div class="table-action">
+																					<a href="" class="btn btn-sm bg-primary">
+																						<i class="far fa-check"></i> Make this Active
+																					</a>
+																					<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																						<i class="fas fa-sign-out-alt"></i> Delete it
+																					</a>
+																				</div>
+																			</td>
+																		</tr>
+																		
+																	</tbody>
+																</table>
+															</div>
+														</div>
+														<!-- /Tuesday Slot -->
+
+														<!-- Wednesday Slot -->
+														<div id="slot_wednesday" class="tab-pane fade">
+															<h4 class="card-title d-flex justify-content-between">
+																<span>show calendate , start and end time</span> 
+																<a class="edit-link" data-toggle="modal" href="#edit_time_slot"><i class="fa fa-edit mr-1"></i>Edit</a>
+															</h4>
+															
+															
+														</div>
+														<!-- /Wednesday Slot -->
+
+														
+
+													</div>
+													<!-- /Schedule Content -->
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="#">Semanticbits</a></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="#">Contact support</a></li>
+											<li><a href="#">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+<!-- doccure/doctor-change-password.html  30 Nov 2019 04:12:36 GMT -->
+</html>

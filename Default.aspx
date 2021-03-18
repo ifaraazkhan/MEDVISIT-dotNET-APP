@@ -24,6 +24,7 @@
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+    <style></style>
 </head>
 <body class="body-bg">
     <form id="form1" runat="server">

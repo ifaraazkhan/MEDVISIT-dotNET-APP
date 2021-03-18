@@ -102,149 +102,47 @@
 												<div class="col-md-12">
 												
 													<!-- Time Slot -->
-													<div class="time-slot">
-														<ul class="clearfix">
-															<li>
-																
-																<a class="timing bg-success-light" href="#">
-																	<span>10:00 - 10:30</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00 - 11:30</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:30 - 12:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>12:00 - 12:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>12:30 - 1:00</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>1:00 - 1:30</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>1:30 - 2:00</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>2:00 - 2:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>2:30 - 3:00</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>3:00 - 3:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>3:30 - 4:00</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>4:00 - 4:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>4:30 - 5:00</span> <span>PM</span>
-																</a>
-															</li>
-															<li>
-																<a class="timing" href="#">
-																	<span>9:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>10:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00</span> <span>AM</span>
-																</a>
-															</li>
-															<li>
-																<a class="timing" href="#">
-																	<span>9:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>10:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00</span> <span>AM</span>
-																</a>
-															</li>
-															<li>
-																
-																<a class="timing bg-success-light" href="#">
-																	<span>10:00 - 10:30</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00 - 11:30</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:30 - 12:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>12:00 - 12:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>12:30 - 1:00</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>1:00 - 1:30</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>1:30 - 2:00</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>2:00 - 2:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>2:30 - 3:00</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>3:00 - 3:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>3:30 - 4:00</span> <span>PM</span>
-																</a>
-																<a class="timing bg-danger-light" href="#">
-																	<span>4:00 - 4:30</span> <span>PM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>4:30 - 5:00</span> <span>PM</span>
-																</a>
-															</li>
-															<li>
-																<a class="timing" href="#">
-																	<span>9:00</span> <span>AM</span>
-																</a>
-																<a class="timing selected" href="#">
-																	<span>10:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00</span> <span>AM</span>
-																</a>
-															</li>
-															<li>
-																<a class="timing" href="#">
-																	<span>9:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>10:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00</span> <span>AM</span>
-																</a>
-															</li>
-															<li>
-																<a class="timing" href="#">
-																	<span>9:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>10:00</span> <span>AM</span>
-																</a>
-																<a class="timing" href="#">
-																	<span>11:00</span> <span>AM</span>
-																</a>
-															</li>
-														</ul>
-													</div>
+                                                 
+                                                            	<div class="time-slot">
+	                                                             <ul class="clearfix">
+                                                                     <li>
+                                                                <asp:Repeater runat="server" ID="rptSection1" OnItemDataBound="rptSection1_ItemDataBound">
+                    <ItemTemplate>
+                        <asp:HyperLink ID="btn_slot" runat="server" Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' class="timing bg-success-light"></asp:HyperLink>
+                       
+                       
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+                                                                     <li>
+                                                                         <asp:Repeater runat="server" ID="rptSection2">
+                    <ItemTemplate>
+                        <a class="timing bg-success-light" href="#">
+						<span><%# Eval("start_time")%> - <%# Eval("end_time")%></span>
+						</a>
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+
+                                                                        <li>
+                                                                         <asp:Repeater runat="server" ID="rptSection3">
+                    <ItemTemplate>
+                        <a class="timing bg-success-light" href="#">
+						<span><%# Eval("start_time")%> - <%# Eval("end_time")%></span>
+						</a>
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+                                                                 </ul>
+                                                                </div>
+
+                                                       
+                
+             
+           
+												
+														
+													
 													<!-- /Time Slot -->
 													<hr/>
 													<div class="row form-row">

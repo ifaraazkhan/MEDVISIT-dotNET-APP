@@ -16,14 +16,18 @@
 
 <asp:Content ID="Content3" runat="server" contentplaceholderid="ContentPlaceHolder_mainArea">
     <div class="col-md-7 col-lg-8 col-xl-9">
+       
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 
-							
+        <ContentTemplate>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-12 col-sm-4 col-md-6">
-											<h4 class="mb-1">11 November 2019</h4>
-											<p class="text-muted">Monday</p>
+											<h4 class="mb-1">
+                                                <asp:Label ID="lbl_today_date" runat="server" Text=""></asp:Label></h4>
+											<p class="text-muted">
+                                                <asp:Label ID="lbl_today_day" runat="server" Text=""></asp:Label></p>
 										</div>
 										<div class="col-12 col-sm-8 col-md-6 text-sm-right">
 											<div class="bookingrange btn btn-white btn-sm mb-3">
@@ -41,64 +45,50 @@
 												<div class="col-md-12">
 												
 													<!-- Day Slot -->
-													<div class="day-slot">
-														<ul>
-															<li class="left-arrow">
+                                                       <asp:ListView ID="ListView_Days" runat="server" ItemPlaceholderID="itemPlaceHolder1" 
+                                                           OnItemDataBound="ListView_Days_ItemDataBound" OnItemCommand="ListView_Days_ItemCommand" DataKeyNames="id" >
+
+                               <LayoutTemplate>
+                                  <div class="day-slot">
+
+									<ul>
+                                        	<li class="left-arrow">
 																<a href="">
 																	<i class="fa fa-chevron-left"></i>
 																</a>
-															</li>
-															<li>
-																<span>Mon</span>
-																<span class="slot-date">11 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-success-light" data-toggle="tooltip" data-placement="bottom" title="Change to Non-Working">Working</button>
-													
-																
-															</span>
-															</li>
-															<li>
-																<span>Tue</span>
-																<span class="slot-date">12 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li>
-																<span>Wed</span>
-																<span class="slot-date">13 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li>
-																<span>Thu</span>
-																<span class="slot-date">14 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li>
-																<span>Fri</span>
-																<span class="slot-date">15 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li>
-																<span>Sat</span>
-																<span class="slot-date">16 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li>
-																<span>Sun</span>
-																<span class="slot-date">17 Nov <small class="slot-year">2019</small></span>
-																<button type="submit" class="btn btn-sm bg-default-light" data-toggle="tooltip" data-placement="bottom" 
-																title="Make this Working" >Non-Working</button>
-															</li>
-															<li class="right-arrow">
+											</li>
+                                     <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
+                                   <li class="right-arrow">
 																<a href="">
 																	<i class="fa fa-chevron-right"></i>
 																</a>
 															</li>
 														</ul>
 													</div>
+                               </LayoutTemplate>
+
+					           <ItemTemplate>
+                              <li>
+																<span><%# Eval("day")%></span>
+																<span class="slot-date">
+                                                                    <asp:Label ID="lbl_date" runat="server" Text='<%# Eval("date")%>'></asp:Label>
+                                                                 
+
+																</span>
+                                  <asp:Button ID="btn_working" runat="server" Text='<%# Eval("status")%>' class="btn btn-sm bg-success-light" data-toggle="tooltip" data-placement="bottom" title="change to non-working" 
+                                      CommandName="Status_Add" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>' onclientclick="javascript:return confirm('Are you sure to change status?')" />
+							      
+                                  <asp:Button ID="btn_nonWorking" Visible="false" runat="server" Text='<%# Eval("status")%>' class="btn btn-sm bg-danger-light" data-toggle="tooltip" data-placement="bottom" title="change to working" 
+                                      CommandName="Status_Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>' onclientclick="javascript:return confirm('Are you sure to change status?')" />
+																
+								</li>
+								 </ItemTemplate>
+			
+                            </asp:ListView>					
+														
+															
+															
+															
 													<!-- /Day Slot -->
 													
 												</div>
@@ -322,7 +312,8 @@
 									</div>
 								</div>
 							</div>
-
+            </ContentTemplate>
+            </asp:UpdatePanel>
 						</div>
 </asp:Content>
 

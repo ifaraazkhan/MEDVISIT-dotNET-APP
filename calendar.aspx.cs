@@ -37,6 +37,10 @@ namespace MD_Clinic
                 Slots_template_datatable(rptSection1);
                 Slots_template_datatable(rptSection2);
                 Slots_template_datatable(rptSection3);
+                Slots_template_datatable(rptSection4);
+                Slots_template_datatable(rptSection5);
+                Slots_template_datatable(rptSection6);
+                Slots_template_datatable(rptSection7);
 
 
             }
@@ -216,17 +220,72 @@ namespace MD_Clinic
             bind_slot_off(todays_date,e);
           
         }
+        protected void rptSection2_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(1).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
+        protected void rptSection3_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(2).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
+        protected void rptSection4_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(3).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
+        protected void rptSection5_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(4).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
+        protected void rptSection6_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(5).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
+        protected void rptSection7_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(6).ToString("MM/dd/yyyy");
+            //check this day is working or non-working
+            bind_slot_off(todays_date, e);
+
+        }
 
         private void bind_slot_off(string Date, RepeaterItemEventArgs e)
         {
             string check_day_status = cls.Acessdb_return("select count(*) from tbl_doctor_days_off where date='" + Date + "' and clinic_id=" + Clinic_id + " and doctor_id=" + Doctor_id + "");
-            HyperLink btn = (HyperLink)e.Item.FindControl("btn_slot");
+            Button red_button = (Button)e.Item.FindControl("btn_unavailable1");
+            Button _button = (Button)e.Item.FindControl("btn_available1");
             if (check_day_status == "0")
             {
                 // working
                 // if working then check non-available slots
                 // mark non-available slots and set a flag for click reference
-                string slot = btn.Text;
+                string slot = _button.Text;
                 DataSet ds_db = cls.Accessdb_return_dataset("select id,start_time,end_time,status from tbl_doctor_slot_off where date='" + Date + "' and clinic_id=" + Clinic_id + " and doctor_id=" + Doctor_id + "", "tbl_doctor_slot_off");
                 foreach (DataRow datarow in ds_db.Tables[0].Rows)
                 {
@@ -236,15 +295,86 @@ namespace MD_Clinic
                     string db_slot = (_startTime.ToString("hh:mm tt")) + " - " + (_endTime.ToString("hh:mm tt"));
                     if (db_slot == slot)
                     {
-                        btn.Attributes["class"] = "timing bg-danger-light";
+                        red_button.Visible = true;
+                        _button.Visible = false;
                     }
                 }
             }
             else
             {
-                btn.Attributes["disabled"] = "disabled";
-                btn.Attributes["class"] = "timing bg-default-light";
+                _button.Attributes["disabled"] = "disabled";
+                _button.Attributes["class"] = "timing bg-default-light";
             }
         }
+
+        protected void rptSection1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.ToString("MM/dd/yyyy");
+            slot_db_update(e,todays_date);
+                
+        }
+        protected void rptSection2_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(1).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+        protected void rptSection3_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(2).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+        protected void rptSection4_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(3).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+        protected void rptSection5_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(4).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+        protected void rptSection6_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(5).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+        protected void rptSection7_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            ///here we are supposng this is date-bound 
+            string todays_date = dt_global.AddDays(6).ToString("MM/dd/yyyy");
+            slot_db_update(e, todays_date);
+
+        }
+
+        private void slot_db_update(RepeaterCommandEventArgs e,string date)
+        {
+            Button button = e.CommandSource as Button;
+            Button red_button = (Button)e.Item.FindControl("btn_unavailable1");
+            if (e.CommandName == "un_available")
+            {
+                //make unavaialble by inserting record 
+            //    cls.Acessdb("insert into tbl_doctor_slot_off(clinic_id,doctor_id,start_time,end_time,date,day,status) values("+Clinic_id+","+Doctor_id+",'"++"','"++"','"++"','1') ");
+
+            }
+            else if (e.CommandName == "_available")
+            {
+                // make available by deleting recoed 
+             //   cls.Acessdb("");
+
+            }
+        }
+
+       
     }
 }

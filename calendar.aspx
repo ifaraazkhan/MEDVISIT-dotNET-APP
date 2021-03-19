@@ -106,33 +106,93 @@
                                                             	<div class="time-slot">
 	                                                             <ul class="clearfix">
                                                                      <li>
-                                                                <asp:Repeater runat="server" ID="rptSection1" OnItemDataBound="rptSection1_ItemDataBound">
+                                                                          <asp:Repeater runat="server" ID="rptSection1" OnItemDataBound="rptSection1_ItemDataBound" OnItemCommand="rptSection1_ItemCommand">
                     <ItemTemplate>
-                        <asp:HyperLink ID="btn_slot" runat="server" Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' class="timing bg-success-light"></asp:HyperLink>
-                       
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
                        
                     </ItemTemplate>
                 </asp:Repeater>
                                                                      </li>
                                                                      <li>
-                                                                         <asp:Repeater runat="server" ID="rptSection2">
+                                                                          <asp:Repeater runat="server" ID="rptSection2" OnItemDataBound="rptSection2_ItemDataBound" OnItemCommand="rptSection2_ItemCommand">
                     <ItemTemplate>
-                        <a class="timing bg-success-light" href="#">
-						<span><%# Eval("start_time")%> - <%# Eval("end_time")%></span>
-						</a>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
                     </ItemTemplate>
                 </asp:Repeater>
                                                                      </li>
 
                                                                         <li>
-                                                                         <asp:Repeater runat="server" ID="rptSection3">
+                                                                          <asp:Repeater runat="server" ID="rptSection3" OnItemDataBound="rptSection3_ItemDataBound" OnItemCommand="rptSection3_ItemCommand">
                     <ItemTemplate>
-                        <a class="timing bg-success-light" href="#">
-						<span><%# Eval("start_time")%> - <%# Eval("end_time")%></span>
-						</a>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
                     </ItemTemplate>
                 </asp:Repeater>
                                                                      </li>
+
+                                                                      <li>
+                                                                          <asp:Repeater runat="server" ID="rptSection4" OnItemDataBound="rptSection4_ItemDataBound" OnItemCommand="rptSection4_ItemCommand">
+                    <ItemTemplate>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+
+                                                                      <li>
+                                                                          <asp:Repeater runat="server" ID="rptSection5" OnItemDataBound="rptSection5_ItemDataBound" OnItemCommand="rptSection5_ItemCommand">
+                    <ItemTemplate>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+                                                                     <li>
+                                                                          <asp:Repeater runat="server" ID="rptSection6" OnItemDataBound="rptSection6_ItemDataBound" OnItemCommand="rptSection6_ItemCommand">
+                    <ItemTemplate>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+                                                                       <li>
+                                                                          <asp:Repeater runat="server" ID="rptSection7" OnItemDataBound="rptSection7_ItemDataBound" OnItemCommand="rptSection7_ItemCommand">
+                    <ItemTemplate>
+                        <asp:Button ID="btn_available1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-success-light" CommandName="un_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>'/>
+                       <asp:Button ID="btn_unavailable1" runat="server"  Text='<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' 
+                        class="timing bg-danger-light" CommandName="_available" CommandArgument = '<%# String.Format("{0} - {1}", Eval("start_time"), Eval("end_time")) %>' Visible="false"/>
+                      
+                       
+                    </ItemTemplate>
+                </asp:Repeater>
+                                                                     </li>
+                                                                     
                                                                  </ul>
                                                                 </div>
 

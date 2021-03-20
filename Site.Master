@@ -141,6 +141,7 @@
 
             <!-- Page Content -->
 			<div class="content">
+          
 				<div class="container-fluid">
 
 					<div class="row">
@@ -449,6 +450,28 @@
 </script>
     <script>
         $('#navigation_menu').find('[href = "'+((window.location.pathname).replace('/',''))+".aspx"+'"]').parent().addClass('active');
+    </script>
+   <%-- // alert functon --%>
+    <script>
+        window.setTimeout(function() {
+    $(".alert_dashboard").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+   
+    });
+        }, 4000);
+    </script>
+    <script>
+        function show_alert() {
+            alert("hi");
+         //    $('.alert_calendar').show();
+         //   setTimeout(function () {
+            
+         //     $(".alert_calendar").fadeTo(500, 0).slideUp(500, function () {
+         //         $(this).remove();
+         //     }, 4000);
+       
+         //});
+        }
     </script>
 </body>
 </html>

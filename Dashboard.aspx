@@ -14,7 +14,9 @@
 			</div>
 			<!-- /Breadcrumb -->
             </asp:Content>
+
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder_mainArea">
+          
     <div class="col-md-7 col-lg-8 col-xl-9">
 
 							<!-- <div class="row">
@@ -73,6 +75,10 @@
 							</div> -->
 							
 							<div class="row">
+                                 <div class="alert alert-success alert_dashboard" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Sync !</strong> Data Syncing bridge activated successfully . 
+</div>
 								<div class="col-md-12">
 									<!-- <h4 class="mb-4">Patient Appoinment</h4> -->
 									<div class="appointment-tab">

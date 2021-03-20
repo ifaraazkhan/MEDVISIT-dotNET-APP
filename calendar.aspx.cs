@@ -18,32 +18,47 @@ namespace MD_Clinic
         DateTime dt_global;
         protected void Page_Load(object sender, EventArgs e)
         {
-           // DayOfWeek wk = DateTime.Today.DayOfWeek;
+            
+            // DayOfWeek wk = DateTime.Today.DayOfWeek;
             dt_global = DateTime.Now;
             Doctor_id = Session["doctor_id_session"].ToString();
             Clinic_id = Session["clinic_id_session"].ToString();
 
             if (!IsPostBack)
             {
-                Doctor_id = Session["doctor_id_session"].ToString();
+               
                 Clinic_id = Session["clinic_id_session"].ToString();
                 lbl_today_date.Text = dt_global.ToString("MM/dd/yyyy");
                 lbl_today_day.Text = dt_global.ToString("dddd");
 
-               //bind days off status
-                Days_off_datatable(dt_global);
-
-                //bind slots off 
-                Slots_template_datatable(rptSection1);
-                Slots_template_datatable(rptSection2);
-                Slots_template_datatable(rptSection3);
-                Slots_template_datatable(rptSection4);
-                Slots_template_datatable(rptSection5);
-                Slots_template_datatable(rptSection6);
-                Slots_template_datatable(rptSection7);
-
+                //check for basic setttngs first 
+                string check = cls.Acessdb_return("select count(*) from calendar_setting where clinic_id="+Clinic_id+" and doctor_id="+Doctor_id+"");
+                if (check == "0")
+                {
+                    settings_div.Visible = true;
+                    listview_div.Visible = false;
+                }
+                else
+                {
+                    bind_all_templates(dt_global);
+                }
 
             }
+        }
+
+        private void bind_all_templates(DateTime dt_global)
+        {
+            //bind days off status
+            Days_off_datatable(dt_global);
+
+            //bind slots off 
+            Slots_template_datatable(rptSection1);
+            Slots_template_datatable(rptSection2);
+            Slots_template_datatable(rptSection3);
+            Slots_template_datatable(rptSection4);
+            Slots_template_datatable(rptSection5);
+            Slots_template_datatable(rptSection6);
+            Slots_template_datatable(rptSection7);
         }
         
         private void Days_off_datatable(DateTime fd)
@@ -115,6 +130,7 @@ namespace MD_Clinic
 
         protected void ListView_Days_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
+            
             Button working = (Button)e.Item.FindControl("btn_working");
             Button non_working = (Button)e.Item.FindControl("btn_Nonworking");
             string aa = working.Text;
@@ -143,7 +159,7 @@ namespace MD_Clinic
                 case ("Status_Delete"):
                     int id = Convert.ToInt32(e.CommandArgument);
                     // delete entry from tbl_doctor_days_off;
-                    cls.Acessdb("delete from tbl_doctor_days_off where id='"+id+"' and doctor_id="+Doctor_id+" and clinic_id="+Clinic_id+"");
+                    cls.Acessdb("delete from tbl_doctor_days_off where date='"+dt+"' and doctor_id="+Doctor_id+" and clinic_id="+Clinic_id+"");
                     break;
                 case ("Status_Add"):
                     id = Convert.ToInt32(e.CommandArgument);
@@ -152,7 +168,7 @@ namespace MD_Clinic
                     break;
             }
 
-            Days_off_datatable(dt_global);
+            bind_all_templates(dt_global);
         }
 
 
@@ -361,18 +377,29 @@ namespace MD_Clinic
         {
             Button button = e.CommandSource as Button;
             Button red_button = (Button)e.Item.FindControl("btn_unavailable1");
+            DateTime start_time = DateTime.Parse(button.CommandArgument);
+           
             if (e.CommandName == "un_available")
             {
+                //get slot duration
+                string slot_duration = cls.Acessdb_return("select slot_time from calendar_setting where clinic_id=" + Clinic_id + " and doctor_id=" + Doctor_id + "");
+                DateTime end_time = start_time.AddMinutes(Convert.ToDouble(slot_duration));
+                string _start = start_time.ToString("HH:mm");
+                string _end = end_time.ToString("HH:mm");
+                string day = DateTime.Parse(date).ToString("dddd");
                 //make unavaialble by inserting record 
-            //    cls.Acessdb("insert into tbl_doctor_slot_off(clinic_id,doctor_id,start_time,end_time,date,day,status) values("+Clinic_id+","+Doctor_id+",'"++"','"++"','"++"','1') ");
-
+                cls.Acessdb("insert into tbl_doctor_slot_off(clinic_id,doctor_id,start_time,end_time,date,day,status) values("+Clinic_id+","+Doctor_id+",'"+_start+"','"+_end+"','"+date+"','"+day+"','1') ");
+               
             }
             else if (e.CommandName == "_available")
             {
                 // make available by deleting recoed 
-             //   cls.Acessdb("");
+                string _start = start_time.ToString("HH:mm");
+                cls.Acessdb("delete from tbl_doctor_slot_off where date='"+date+"' and start_time='"+_start+"' and clinic_id="+Clinic_id+" and doctor_id="+Doctor_id+"");
 
             }
+            //rebind aall 
+            bind_all_templates(dt_global);
         }
 
        
